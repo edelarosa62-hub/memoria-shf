@@ -1098,7 +1098,7 @@
                     const total = parseFloat(totalPrivInput.value) || 0;
                     const coef = (total / sumTotalPriv) * 100;
                     coefInput.value = coef.toFixed(2);
-                    const totalComunes = 100; 
+                    const totalComunes = 100;
                     const comun = (total / sumTotalPriv) * totalComunes;
                     comunInput.value = comun.toFixed(2);
                 }
@@ -1158,7 +1158,7 @@
         document.getElementById('formAvaluos').addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const URL_API = "TU_URL_DE_SHEETDB_AQUI";
+            const URL_API = "https://sheetdb.io/api/v1/dmn22sa7ad89n";
 
             const registro = {
                 "data": [{
@@ -1240,22 +1240,23 @@
                 }]
             };
 
-            if (URL_API === "https://sheetdb.io/api/v1/dmn22sa7ad89n") {
-                alert("Por favor, configura tu URL de SheetDB en la variable URL_API del código.");
-                return;
-            }
-
             fetch(URL_API, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(registro)
             })
-            .then(res => res.json())
-            .then(data => {
+            .then(async res => {
+                const data = await res.json().catch(() => ({}));
+                if (!res.ok) {
+                    throw new Error(data.error || `El servidor respondió con ${res.status}.`);
+                }
+                return data;
+            })
+            .then(() => {
                 alert("¡Avalúo cargado y guardado con éxito!");
             })
             .catch(err => {
-                alert("Error al intentar guardar el registro.");
+                alert(`Error al intentar guardar el registro: ${err.message}`);
                 console.error(err);
             });
         });
