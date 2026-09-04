@@ -1345,7 +1345,7 @@
         });
     </script>
 <script>
-  const URL_APPS_SCRIPT = https://script.google.com/macros/s/AKfycbyDnSh54x4nk043rq1EAzjpKuyrJqAEnihuEtKnHBeSxFeeGC5x2IekcLn-cWnS3AbiRg/exec"";
+  const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbxMl0Br-oE7kV2YjYoAqobgDsbRdJZLuOrtgsXV6kyPFkSYDknpRjF-AEMHNMuobFdyww/exec";
 
   // 1. Cargar datos de la hoja cuando se abre la página
   window.addEventListener('DOMContentLoaded', () => {
