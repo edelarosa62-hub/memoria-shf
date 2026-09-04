@@ -84,30 +84,6 @@
             margin-top: 4px;
         }
 
-        /* ===== TÍTULO PRINCIPAL ===== */
-        .doc-title {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .doc-title h2 {
-            font-size: 30px;
-            font-weight: 700;
-            color: #0b2b4a;
-            letter-spacing: 1px;
-            border-bottom: 3px double #1b4f8b;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        .doc-title .sub {
-            display: block;
-            font-size: 16px;
-            font-weight: 400;
-            color: #495057;
-            margin-top: 8px;
-        }
-
         /* ===== SECCIONES ===== */
         section {
             margin-bottom: 40px;
@@ -179,13 +155,6 @@
             margin-left: 4px;
         }
 
-        .field-group .hint {
-            font-size: 13px;
-            color: #6c757d;
-            font-weight: 400;
-            margin-left: 6px;
-        }
-
         .field-group input,
         .field-group textarea,
         .field-group select {
@@ -232,16 +201,9 @@
             gap: 18px;
         }
 
-        .row-4 {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 18px;
-        }
-
         @media (max-width: 768px) {
             .row-2,
-            .row-3,
-            .row-4 {
+            .row-3 {
                 grid-template-columns: 1fr;
             }
         }
@@ -275,14 +237,12 @@
             border-radius: 4px;
             font-size: 14px;
             background: transparent;
-            transition: background 0.2s, border-color 0.2s;
         }
 
         .colindancias-table input:focus {
             background: #fff;
             border-color: #1b4f8b;
             outline: none;
-            box-shadow: 0 0 0 2px rgba(27, 79, 139, 0.12);
         }
 
         /* ===== TABLA DE INDIVISOS ===== */
@@ -321,7 +281,6 @@
             border-radius: 4px;
             font-size: 13px;
             background: transparent;
-            transition: background 0.2s, border-color 0.2s;
             min-width: 60px;
         }
 
@@ -329,7 +288,6 @@
             background: #fff;
             border-color: #1b4f8b;
             outline: none;
-            box-shadow: 0 0 0 2px rgba(27, 79, 139, 0.12);
         }
 
         .indivisos-table .totales-row td {
@@ -357,11 +315,11 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 8px 18px;
+            padding: 10px 20px;
             border: none;
             border-radius: 6px;
             font-weight: 600;
-            font-size: 13px;
+            font-size: 14px;
             cursor: pointer;
             transition: background 0.2s, transform 0.1s;
             font-family: inherit;
@@ -404,8 +362,19 @@
             border: 1.5px solid #ced4da;
         }
 
-        .btn-outline-secondary:hover {
-            background: #e9ecef;
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background-color: #1b4f8b;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-top: 25px;
+        }
+
+        .btn-submit:hover {
+            background-color: #143b66;
         }
 
         /* ===== RESUMEN DE ÁREAS ===== */
@@ -438,13 +407,6 @@
             background: transparent;
         }
 
-        .resumen-table input:focus {
-            background: #fff;
-            border-color: #1b4f8b;
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(27, 79, 139, 0.12);
-        }
-
         /* ===== FIRMA ===== */
         .firma-box {
             display: grid;
@@ -471,13 +433,6 @@
             font-weight: 500;
         }
 
-        @media (max-width: 768px) {
-            .firma-box {
-                grid-template-columns: 1fr;
-                gap: 18px;
-            }
-        }
-
         /* ===== PIE DE PÁGINA ===== */
         .footer-doc {
             margin-top: 35px;
@@ -488,111 +443,7 @@
             text-align: center;
         }
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px 16px;
-            }
-            .header-institutional {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .header-institutional h1 {
-                text-align: left;
-                font-size: 20px;
-            }
-            .doc-title h2 {
-                font-size: 22px;
-            }
-            .section-body {
-                padding: 16px;
-            }
-            .firma-box {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* ===== PRINT ===== */
-        @media print {
-            body {
-                background: #fff;
-                padding: 10px;
-            }
-            .container {
-                box-shadow: none;
-                border: 1px solid #ccc;
-                padding: 30px;
-            }
-            .btn {
-                display: none;
-            }
-            section {
-                border-color: #aaa;
-                page-break-inside: avoid;
-            }
-            .section-header {
-                background: #1b4f8b !important;
-                color: #fff !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .indivisos-table th {
-                background: #1b4f8b !important;
-                color: #fff !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .header-institutional .logos .shf-badge,
-            .header-institutional .logos .cdmx-badge {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .indivisos-table .totales-row td {
-                background: #e9ecef !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .resumen-table th {
-                background: #e9ecef !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            input,
-            textarea,
-            select {
-                border: 1px solid #999 !important;
-                background: #fff !important;
-            }
-            .colindancias-table input,
-            .indivisos-table td input,
-            .resumen-table input {
-                border: 1px solid #ccc !important;
-                background: #fff !important;
-            }
-            .field-group input,
-            .field-group textarea,
-            .field-group select {
-                border: 1px solid #999 !important;
-                background: #fff !important;
-            }
-        }
-
         /* ===== UTILERÍAS ===== */
-        .mt-10 {
-            margin-top: 10px;
-        }
-        .mb-10 {
-            margin-bottom: 10px;
-        }
-        .text-muted {
-            color: #6c757d;
-        }
-        .text-sm {
-            font-size: 13px;
-        }
-        .fw-600 {
-            font-weight: 600;
-        }
         .bg-soft {
             background: #f8f9fa;
             padding: 14px 18px;
@@ -605,9 +456,7 @@
 
     <div class="container" id="documento">
 
-        <!-- ========================================================= -->
-        <!-- ENCABEZADO INSTITUCIONAL                                    -->
-        <!-- ========================================================= -->
+        <!-- ENCABEZADO INSTITUCIONAL -->
         <div class="header-institutional">
             <div class="logos">
                 <span class="shf-badge">SHF · Sociedad Hipotecaria Federal</span>
@@ -619,615 +468,567 @@
             </h1>
         </div>
 
-        <!-- ========================================================= -->
-        <!-- DATOS FORMALES SHF (Portada)                                -->
-        <!-- ========================================================= -->
-        <div style="background:#f1f4f8; border-radius:10px; padding:18px 22px; margin-bottom:30px; border:1px solid #ced4da;">
-            <div class="row-3">
-                <div class="field-group">
-                    <label>Clave del avalúo (formato SHF)</label>
-                    <input type="text" placeholder="Ej. SHF-2026-09-XXXXX">
-                </div>
-                <div class="field-group">
-                    <label>Fecha de certificación</label>
-                    <input type="date">
-                </div>
-                <div class="field-group">
-                    <label>Clave Única de Vivienda (CUV)</label>
-                    <input type="text" placeholder="CUV-XXXXXXXXXX">
-                </div>
-            </div>
-            <div class="row-3">
-                <div class="field-group">
-                    <label>Clave Unidad de Valuación SHF</label>
-                    <input type="text" placeholder="Clave UV-SHF">
-                </div>
-                <div class="field-group">
-                    <label>Nombre y clave del Controlador SHF</label>
-                    <input type="text" placeholder="Controlador: Nombre / Clave">
-                </div>
-                <div class="field-group">
-                    <label>Nombre y clave del Perito Valuador SHF</label>
-                    <input type="text" placeholder="Perito: Nombre / Clave">
-                </div>
-            </div>
-            <div class="row-2">
-                <div class="field-group">
-                    <label>Solicitante del avalúo</label>
-                    <input type="text" placeholder="Nombre del solicitante o institución">
-                </div>
-                <div class="field-group">
-                    <label>Propósito del avalúo</label>
-                    <select>
-                        <option value="">Seleccionar...</option>
-                        <option>Originación de crédito hipotecario</option>
-                        <option>Recuperación / Reestructuración</option>
-                        <option>Adjudicación o dación en pago</option>
-                        <option>Constitución de régimen en condominio</option>
-                        <option>Otro</option>
-                    </select>
-                </div>
-            </div>
-            <div class="field-group">
-                <label>Número de registro INFONAVIT (si aplica)</label>
-                <input type="text" placeholder="Número de registro">
-            </div>
-        </div>
+        <form id="formAvaluos">
 
-        <!-- ========================================================= -->
-        <!-- SECCIÓN I: IDENTIFICACIÓN Y ANTECEDENTES                   -->
-        <!-- ========================================================= -->
-        <section>
-            <div class="section-header">
-                I. IDENTIFICACIÓN DEL INMUEBLE Y ANTECEDENTES
-                <span class="badge">Art. 13 Ley Propiedad en Condominio CDMX</span>
-            </div>
-            <div class="section-body">
-                <div class="row-2">
+            <!-- DATOS FORMALES SHF (Portada) -->
+            <div style="background:#f1f4f8; border-radius:10px; padding:18px 22px; margin-bottom:30px; border:1px solid #ced4da;">
+                <div class="row-3">
                     <div class="field-group">
-                        <label>Nombre del proyecto o condominio <span class="required">*</span></label>
-                        <input type="text" placeholder="Ej. Condominio Residencial Florencia">
+                        <label>Correo institucional <span class="required">*</span></label>
+                        <input type="email" id="correo_institucional" placeholder="correo@ejemplo.com" required>
                     </div>
                     <div class="field-group">
-                        <label>Cuenta predial <span class="required">*</span></label>
-                        <input type="text" placeholder="Número de cuenta predial">
+                        <label>Clave del avalúo (formato SHF) <span class="required">*</span></label>
+                        <input type="text" id="clave_avaluo" placeholder="Ej. SHF-2026-09-XXXXX" required>
+                    </div>
+                    <div class="field-group">
+                        <label>Fecha de certificación <span class="required">*</span></label>
+                        <input type="date" id="fecha_certificacion" required>
                     </div>
                 </div>
-                <div class="field-group">
-                    <label>Ubicación completa <span class="required">*</span></label>
-                    <input type="text" placeholder="Calle, número exterior e interior, colonia, alcaldía, C.P., CDMX">
-                </div>
-                <div class="row-2">
+                <div class="row-3">
                     <div class="field-group">
-                        <label>Régimen de propiedad actual</label>
-                        <select>
-                            <option>Propiedad privada individual</option>
-                            <option>Copropiedad</option>
-                            <option>Régimen en condominio ya constituido</option>
-                            <option>Otro</option>
-                        </select>
+                        <label>Clave Única de Vivienda (CUV)</label>
+                        <input type="text" id="cuv" placeholder="CUV-XXXXXXXXXX">
                     </div>
                     <div class="field-group">
-                        <label>Tipo de inmueble (SHF)</label>
-                        <select>
-                            <option>Terreno habitacional</option>
-                            <option>Casa habitación</option>
-                            <option>Casa en condominio</option>
-                            <option>Departamento en condominio</option>
-                            <option>Otro</option>
+                        <label>Clave Unidad de Valuación SHF</label>
+                        <input type="text" id="clave_unidad_shf" placeholder="Clave UV-SHF">
+                    </div>
+                    <div class="field-group">
+                        <label>Nombre y clave del Controlador SHF</label>
+                        <input type="text" id="controlador_shf" placeholder="Controlador: Nombre / Clave">
+                    </div>
+                </div>
+                <div class="row-3">
+                    <div class="field-group">
+                        <label>Nombre y clave del Perito Valuador SHF</label>
+                        <input type="text" id="perito_shf" placeholder="Perito: Nombre / Clave">
+                    </div>
+                    <div class="field-group">
+                        <label>Solicitante del avalúo</label>
+                        <input type="text" id="solicitante" placeholder="Nombre del solicitante o institución">
+                    </div>
+                    <div class="field-group">
+                        <label>Propósito del avalúo</label>
+                        <select id="proposito">
+                            <option value="">Seleccionar...</option>
+                            <option value="Originación de crédito hipotecario">Originación de crédito hipotecario</option>
+                            <option value="Recuperación / Reestructuración">Recuperación / Reestructuración</option>
+                            <option value="Adjudicación o dación en pago">Adjudicación o dación en pago</option>
+                            <option value="Constitución de régimen en condominio">Constitución de régimen en condominio</option>
+                            <option value="Otro">Otro</option>
                         </select>
                     </div>
                 </div>
-                <h4>Datos de escritura pública</h4>
-                <div class="row-3">
-                    <div class="field-group">
-                        <label>Número de escritura</label>
-                        <input type="text" placeholder="Núm. escritura">
-                    </div>
-                    <div class="field-group">
-                        <label>Fecha</label>
-                        <input type="date">
-                    </div>
-                    <div class="field-group">
-                        <label>Notario Público</label>
-                        <input type="text" placeholder="Nombre del Notario, número">
-                    </div>
-                </div>
                 <div class="field-group">
-                    <label>Datos de inscripción en el Registro Público de la Propiedad</label>
-                    <input type="text" placeholder="Folio Real, número de inscripción, fecha">
-                </div>
-                <div class="field-group">
-                    <label>Antecedentes jurídicos adicionales</label>
-                    <textarea class="medium" placeholder="Describa cualquier antecedente relevante: gravámenes, servidumbres, cesiones, etc."></textarea>
+                    <label>Número de registro INFONAVIT (si aplica)</label>
+                    <input type="text" id="registro_infonavit" placeholder="Número de registro">
                 </div>
             </div>
-        </section>
 
-        <!-- ========================================================= -->
-        <!-- SECCIÓN II: DESCRIPCIÓN FÍSICA DEL TERRENO                 -->
-        <!-- ========================================================= -->
-        <section>
-            <div class="section-header">
-                II. DESCRIPCIÓN FÍSICA DEL TERRENO
-                <span class="badge">SHF Cap. VII · Entorno</span>
-            </div>
-            <div class="section-body">
-                <div class="row-3">
-                    <div class="field-group">
-                        <label>Superficie total del terreno (m²) <span class="required">*</span></label>
-                        <input type="number" step="0.01" placeholder="0.00">
-                    </div>
-                    <div class="field-group">
-                        <label>Forma y configuración</label>
-                        <select>
-                            <option>Regular (rectangular / cuadrado)</option>
-                            <option>Irregular</option>
-                            <option>Poligonal</option>
-                            <option>Con frente a vía pública</option>
-                            <option>Con frente a callejón</option>
-                        </select>
-                    </div>
-                    <div class="field-group">
-                        <label>Topografía</label>
-                        <select>
-                            <option>Sensiblemente plana</option>
-                            <option>Con pendiente suave</option>
-                            <option>Con pendiente pronunciada</option>
-                            <option>Accidentada</option>
-                        </select>
-                    </div>
+            <!-- SECCIÓN I: IDENTIFICACIÓN Y ANTECEDENTES -->
+            <section>
+                <div class="section-header">
+                    I. IDENTIFICACIÓN DEL INMUEBLE Y ANTECEDENTES
+                    <span class="badge">Art. 13 Ley Propiedad en Condominio CDMX</span>
                 </div>
-
-                <h4>Medidas y colindancias</h4>
-                <table class="colindancias-table">
-                    <thead>
-                        <tr>
-                            <th style="width:15%;">Orientación</th>
-                            <th style="width:25%;">Medida (metros)</th>
-                            <th style="width:60%;">Colindancia (nombre del vecino o predio)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Norte</strong></td>
-                            <td><input type="text" placeholder="0.00 m"></td>
-                            <td><input type="text" placeholder="Colindancia norte"></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Sur</strong></td>
-                            <td><input type="text" placeholder="0.00 m"></td>
-                            <td><input type="text" placeholder="Colindancia sur"></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Oriente</strong></td>
-                            <td><input type="text" placeholder="0.00 m"></td>
-                            <td><input type="text" placeholder="Colindancia oriente"></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Poniente</strong></td>
-                            <td><input type="text" placeholder="0.00 m"></td>
-                            <td><input type="text" placeholder="Colindancia poniente"></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h4>Zonificación y normatividad (SEDUVI)</h4>
-                <div class="row-3">
-                    <div class="field-group">
-                        <label>Uso de suelo vigente</label>
-                        <input type="text" placeholder="Ej. Habitacional / Comercial / Mixto">
-                    </div>
-                    <div class="field-group">
-                        <label>Coeficiente de Utilización del Suelo (CUS)</label>
-                        <input type="text" placeholder="Ej. 2.5">
-                    </div>
-                    <div class="field-group">
-                        <label>Coeficiente de Ocupación del Suelo (COS)</label>
-                        <input type="text" placeholder="Ej. 0.6 (60%)">
-                    </div>
-                </div>
-                <div class="field-group">
-                    <label>Porcentaje de área libre requerido</label>
-                    <input type="text" placeholder="% mínimo exigido por normatividad">
-                </div>
-                <div class="field-group">
-                    <label>Servidumbres, restricciones o afectaciones</label>
-                    <textarea class="medium" placeholder="Describa cualquier servidumbre de paso, restricción de uso, zona de riesgo, etc."></textarea>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========================================================= -->
-        <!-- SECCIÓN III: INFRAESTRUCTURA Y OBRAS EXTERIORES            -->
-        <!-- ========================================================= -->
-        <section>
-            <div class="section-header">
-                III. INFRAESTRUCTURA Y OBRAS EXTERIORES (ÁREAS COMUNES)
-                <span class="badge">SHF · Elementos comunes</span>
-            </div>
-            <div class="section-body">
-                <h4>III.1 Instalaciones hidráulicas y sanitarias</h4>
-                <div class="row-3">
-                    <div class="field-group">
-                        <label>Cisterna común (capacidad en litros)</label>
-                        <input type="text" placeholder="Litros">
-                    </div>
-                    <div class="field-group">
-                        <label>Tinacos (capacidad y cantidad)</label>
-                        <input type="text" placeholder="Ej. 2 tinacos de 1,100 L c/u">
-                    </div>
-                    <div class="field-group">
-                        <label>Sistema de bombeo</label>
-                        <input type="text" placeholder="Tipo, automatización, cuarto de máquinas">
-                    </div>
-                </div>
-                <div class="field-group">
-                    <label>Red de drenaje y conexiones</label>
-                    <textarea class="medium" placeholder="Describa la red de drenaje, conexión a red municipal, sistema de captación pluvial, etc."></textarea>
-                </div>
-
-                <h4>III.2 Obras exteriores y delimitaciones</h4>
-                <div class="row-2">
-                    <div class="field-group">
-                        <label>Bardas perimetrales</label>
-                        <textarea placeholder="Material, altura, acabados, estado"></textarea>
-                    </div>
-                    <div class="field-group">
-                        <label>Accesos principales</label>
-                        <textarea placeholder="Portones automáticos, puertas peatonales, caseta de vigilancia"></textarea>
-                    </div>
-                </div>
-                <div class="row-2">
-                    <div class="field-group">
-                        <label>Pavimentos y áreas de circulación</label>
-                        <textarea placeholder="Pasillos, andadores, estacionamiento común, materiales"></textarea>
-                    </div>
-                    <div class="field-group">
-                        <label>Jardines y áreas verdes comunes</label>
-                        <textarea placeholder="Superficie, tipo de vegetación, sistemas de riego"></textarea>
-                    </div>
-                </div>
-
-                <h4>III.3 Instalaciones especiales y servicios comunes</h4>
-                <div class="row-2">
-                    <div class="field-group">
-                        <label>Alumbrado exterior</label>
-                        <textarea placeholder="Tipo de luminarias, ubicación, estado"></textarea>
-                    </div>
-                    <div class="field-group">
-                        <label>Ductos y servicios (CFE, Telmex, gas, etc.)</label>
-                        <textarea placeholder="Ductería, acometidas, ubicación de nichos de medidores"></textarea>
-                    </div>
-                </div>
-                <div class="row-2">
-                    <div class="field-group">
-                        <label>Cuarto de basura y recolección</label>
-                        <textarea placeholder="Ubicación, sistema, capacidad"></textarea>
-                    </div>
-                    <div class="field-group">
-                        <label>Otras instalaciones especiales</label>
-                        <textarea placeholder="Subestación eléctrica, planta de emergencia, paneles solares, etc."></textarea>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========================================================= -->
-        <!-- SECCIÓN IV: UNIDADES PRIVATIVAS                            -->
-        <!-- ========================================================= -->
-        <section>
-            <div class="section-header">
-                IV. DESCRIPCIÓN DE UNIDADES DE PROPIEDAD PRIVATIVA
-                <span class="badge">SHF · Elementos privativos</span>
-            </div>
-            <div class="section-body">
-
-                <!-- UNIDAD 1 (ejemplo) -->
-                <div style="background:#f8f9fa; padding:18px 20px; border-radius:10px; margin-bottom:24px; border-left:5px solid #1b4f8b;">
-                    <h4 style="border-bottom:2px solid #1b4f8b; padding-bottom:8px; margin-top:0;">Unidad Privativa 01 — [Nombre/Tipo]</h4>
+                <div class="section-body">
                     <div class="row-2">
                         <div class="field-group">
-                            <label>Ubicación dentro del conjunto</label>
-                            <input type="text" placeholder="Ej. Planta Baja, frente oriente">
+                            <label>Nombre del proyecto o condominio <span class="required">*</span></label>
+                            <input type="text" id="nombre_proyecto" placeholder="Ej. Condominio Residencial Florencia" required>
                         </div>
                         <div class="field-group">
-                            <label>Superficie construida total (m²)</label>
-                            <input type="text" placeholder="0.00 m²">
+                            <label>Cuenta predial <span class="required">*</span></label>
+                            <input type="text" id="cuenta_predial" placeholder="Número de cuenta predial" required>
                         </div>
                     </div>
                     <div class="field-group">
-                        <label>Desglose por niveles</label>
-                        <textarea placeholder="Ej. Planta Baja: XX m², Nivel 1: XX m², etc."></textarea>
+                        <label>Ubicación completa <span class="required">*</span></label>
+                        <input type="text" id="ubicacion" placeholder="Calle, número exterior e interior, colonia, alcaldía, C.P., CDMX" required>
                     </div>
-                    <div class="field-group">
-                        <label>Distribución arquitectónica</label>
-                        <textarea placeholder="Listado de espacios: estancia, comedor, cocina, recámaras, baños, pasillos, etc."></textarea>
-                    </div>
-                    <div class="field-group">
-                        <label>Áreas privativas accesorias</label>
-                        <textarea placeholder="Patios de servicio, terrazas, balcones, cajones de estacionamiento exclusivos, bodegas (con superficies en m²)"></textarea>
-                    </div>
-                    <div class="field-group">
-                        <label>Acabados y calidad</label>
-                        <textarea class="medium" placeholder="Pisos, muros, plafones, carpintería, herrería, instalaciones especiales dentro de la unidad"></textarea>
-                    </div>
-                </div>
-
-                <!-- UNIDAD 2 (ejemplo) -->
-                <div style="background:#f8f9fa; padding:18px 20px; border-radius:10px; margin-bottom:24px; border-left:5px solid #1b4f8b;">
-                    <h4 style="border-bottom:2px solid #1b4f8b; padding-bottom:8px; margin-top:0;">Unidad Privativa 02 — [Nombre/Tipo]</h4>
                     <div class="row-2">
                         <div class="field-group">
-                            <label>Ubicación dentro del conjunto</label>
-                            <input type="text" placeholder="Ej. Nivel 2, frente poniente">
+                            <label>Régimen de propiedad actual</label>
+                            <select id="regimen_propiedad">
+                                <option value="Propiedad privada individual">Propiedad privada individual</option>
+                                <option value="Copropiedad">Copropiedad</option>
+                                <option value="Régimen en condominio ya constituido">Régimen en condominio ya constituido</option>
+                                <option value="Otro">Otro</option>
+                            </select>
                         </div>
                         <div class="field-group">
-                            <label>Superficie construida total (m²)</label>
-                            <input type="text" placeholder="0.00 m²">
+                            <label>Tipo de inmueble (SHF)</label>
+                            <select id="tipo_inmueble">
+                                <option value="Terreno habitacional">Terreno habitacional</option>
+                                <option value="Casa habitación">Casa habitación</option>
+                                <option value="Casa en condominio">Casa en condominio</option>
+                                <option value="Departamento en condominio">Departamento en condominio</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <h4>Datos de escritura pública</h4>
+                    <div class="row-3">
+                        <div class="field-group">
+                            <label>Número de escritura</label>
+                            <input type="text" id="num_escritura" placeholder="Núm. escritura">
+                        </div>
+                        <div class="field-group">
+                            <label>Fecha de la escritura</label>
+                            <input type="date" id="fecha_escritura">
+                        </div>
+                        <div class="field-group">
+                            <label>Notario Público</label>
+                            <input type="text" id="notario" placeholder="Nombre del Notario, número">
                         </div>
                     </div>
                     <div class="field-group">
-                        <label>Desglose por niveles</label>
-                        <textarea placeholder="Ej. Planta Baja: XX m², Nivel 1: XX m², etc."></textarea>
+                        <label>Folio Real / Registro Público de la Propiedad</label>
+                        <input type="text" id="folio_real" placeholder="Folio Real, número de inscripción, fecha">
                     </div>
                     <div class="field-group">
-                        <label>Distribución arquitectónica</label>
-                        <textarea placeholder="Listado de espacios"></textarea>
-                    </div>
-                    <div class="field-group">
-                        <label>Áreas privativas accesorias</label>
-                        <textarea placeholder="Patios, terrazas, estacionamientos, etc."></textarea>
-                    </div>
-                    <div class="field-group">
-                        <label>Acabados y calidad</label>
-                        <textarea class="medium" placeholder="Descripción detallada de acabados"></textarea>
+                        <label>Antecedentes jurídicos adicionales</label>
+                        <textarea id="antecedentes" class="medium" placeholder="Describa cualquier antecedente relevante: gravámenes, servidumbres, cesiones, etc."></textarea>
                     </div>
                 </div>
+            </section>
 
-                <!-- Botón para agregar más unidades -->
-                <div style="text-align:right; margin-top:10px;">
-                    <button class="btn btn-success" onclick="alert('En una implementación completa, esta acción agregaría una nueva unidad privativa.')">
-                        + Agregar unidad privativa
-                    </button>
+            <!-- SECCIÓN II: DESCRIPCIÓN FÍSICA DEL TERRENO -->
+            <section>
+                <div class="section-header">
+                    II. DESCRIPCIÓN FÍSICA DEL TERRENO
+                    <span class="badge">SHF Cap. VII · Entorno</span>
                 </div>
-                <p class="text-muted text-sm" style="margin-top:6px;">* Repetir este bloque por cada unidad privativa del condominio.</p>
-            </div>
-        </section>
+                <div class="section-body">
+                    <div class="row-2">
+                        <div class="field-group">
+                            <label>Superficie total del terreno (m²) <span class="required">*</span></label>
+                            <input type="number" step="0.01" id="superficie_terreno" placeholder="0.00" min="0.01" required>
+                        </div>
+                        <div class="field-group">
+                            <label>Número de frentes a vialidad</label>
+                            <input type="number" id="frentes_vialidad" placeholder="Ej. 1">
+                        </div>
+                    </div>
+                    <div class="row-2">
+                        <div class="field-group">
+                            <label>Forma y configuración</label>
+                            <select id="forma_terreno">
+                                <option value="Regular (rectangular / cuadrado)">Regular (rectangular / cuadrado)</option>
+                                <option value="Irregular">Irregular</option>
+                                <option value="Poligonal">Poligonal</option>
+                                <option value="Con frente a vía pública">Con frente a vía pública</option>
+                                <option value="Con frente a callejón">Con frente a callejón</option>
+                            </select>
+                        </div>
+                        <div class="field-group">
+                            <label>Topografía</label>
+                            <select id="topografia">
+                                <option value="Sensiblemente plana">Sensiblemente plana</option>
+                                <option value="Con pendiente suave">Con pendiente suave</option>
+                                <option value="Con pendiente pronunciada">Con pendiente pronunciada</option>
+                                <option value="Accidentada">Accidentada</option>
+                            </select>
+                        </div>
+                    </div>
 
-        <!-- ========================================================= -->
-        <!-- SECCIÓN V: TABLA DE INDIVISOS                              -->
-        <!-- ========================================================= -->
-        <section>
-            <div class="section-header">
-                V. TABLA DE INDIVISOS Y COEFICIENTES DE PARTICIPACIÓN
-                <span class="badge">Art. 13 Ley Propiedad en Condominio CDMX</span>
-            </div>
-            <div class="section-body">
-
-                <div class="bg-soft mb-10">
-                    <p style="font-weight:600; margin-bottom:6px;">📐 Metodología de cálculo</p>
-                    <p style="font-size:14px; color:#1a1a2e;">
-                        <strong>Fórmula base:</strong>
-                        <code style="background:#e9ecef; padding:2px 10px; border-radius:4px;">
-                            Coeficiente de Participación (%) = (Superficie Privativa de la Unidad / Suma Total de Superficies Privativas) × 100
-                        </code>
-                    </p>
-                    <p style="font-size:13px; color:#495057; margin-top:6px;">
-                        Conforme al <strong>Artículo 13</strong> de la Ley de Propiedad en Condominio de la CDMX, el coeficiente será proporcional a la superficie privativa, salvo ponderación justificada por calidad, ubicación o destino comercial.
-                    </p>
-                </div>
-
-                <div class="indivisos-table-wrap">
-                    <table class="indivisos-table" id="tablaIndivisos">
+                    <h4>Medidas y colindancias</h4>
+                    <table class="colindancias-table">
                         <thead>
                             <tr>
-                                <th style="width:8%;">Clave</th>
-                                <th style="width:12%;">Ubicación / Nivel</th>
-                                <th style="width:10%;">Uso</th>
-                                <th style="width:11%;">Superficie Privativa (m²)</th>
-                                <th style="width:11%;">Superficie Accesoria (m²)</th>
-                                <th style="width:11%;">Total Privativa (m²)</th>
-                                <th style="width:12%;">Coef. Participación (%)</th>
-                                <th style="width:12%;">Área Común Asignada (m²)</th>
-                                <th style="width:13%;">Observaciones</th>
+                                <th style="width:20%;">Orientación</th>
+                                <th style="width:80%;">Medida (m) y Colindancia (vecino o predio)</th>
                             </tr>
                         </thead>
-                        <tbody id="tbodyIndivisos">
-                            <!-- Filas generadas por JavaScript -->
-                        </tbody>
-                        <tfoot>
-                            <tr class="totales-row">
-                                <td colspan="2" style="text-align:right; font-weight:700;">TOTALES</td>
-                                <td></td>
-                                <td><input type="text" id="totalPrivativa" value="0.00" readonly style="text-align:center; font-weight:700;"></td>
-                                <td><input type="text" id="totalAccesoria" value="0.00" readonly style="text-align:center; font-weight:700;"></td>
-                                <td><input type="text" id="totalPrivativaSum" value="0.00" readonly style="text-align:center; font-weight:700;"></td>
-                                <td><input type="text" id="totalCoef" value="100.00" readonly style="text-align:center; font-weight:700; color:#1b4f8b;"></td>
-                                <td><input type="text" id="totalComun" value="0.00" readonly style="text-align:center; font-weight:700;"></td>
-                                <td></td>
+                        <tbody>
+                            <tr>
+                                <td><strong>Norte</strong></td>
+                                <td><input type="text" id="colindancia_norte" placeholder="0.00 m con..."></td>
                             </tr>
-                        </tfoot>
+                            <tr>
+                                <td><strong>Sur</strong></td>
+                                <td><input type="text" id="colindancia_sur" placeholder="0.00 m con..."></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Oriente</strong></td>
+                                <td><input type="text" id="colindancia_oriente" placeholder="0.00 m con..."></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Poniente</strong></td>
+                                <td><input type="text" id="colindancia_poniente" placeholder="0.00 m con..."></td>
+                            </tr>
+                        </tbody>
                     </table>
-                </div>
 
-                <div class="btn-table-row">
-                    <button class="btn btn-primary" onclick="agregarFilaIndiviso()">+ Agregar fila</button>
-                    <button class="btn btn-danger" onclick="eliminarUltimaFila()">− Eliminar última</button>
-                    <button class="btn btn-outline-secondary" onclick="calcularTotales()">Calcular totales</button>
-                </div>
-
-                <div class="field-group" style="margin-top:16px;">
-                    <label>Nota técnica sobre la ponderación (si aplica)</label>
-                    <textarea placeholder="Indicar si el cálculo se realizó estrictamente por superficie o si se aplicaron factores de ponderación por ubicación, calidad de acabados o uso comercial, conforme a criterios SHF."></textarea>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========================================================= -->
-        <!-- SECCIÓN VI: RESUMEN DE ÁREAS                               -->
-        <!-- ========================================================= -->
-        <section>
-            <div class="section-header">
-                VI. RESUMEN DE ÁREAS Y CUADRO DE SUPERFICIES
-                <span class="badge">SHF · Superficies</span>
-            </div>
-            <div class="section-body">
-                <table class="resumen-table">
-                    <thead>
-                        <tr>
-                            <th style="width:35%;">Concepto</th>
-                            <th style="width:25%;">Superficie (m²)</th>
-                            <th style="width:20%;">Porcentaje del total</th>
-                            <th style="width:20%;">Observaciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Terreno total</strong></td>
-                            <td><input type="text" placeholder="0.00"></td>
-                            <td><input type="text" value="100%" readonly style="text-align:center;"></td>
-                            <td><input type="text" placeholder="Según escritura"></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Área de desplante</strong></td>
-                            <td><input type="text" placeholder="0.00"></td>
-                            <td><input type="text" placeholder="%"></td>
-                            <td><input type="text" placeholder="Huella de construcción"></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Área libre total</strong></td>
-                            <td><input type="text" placeholder="0.00"></td>
-                            <td><input type="text" placeholder="%"></td>
-                            <td><input type="text" placeholder="Debe cumplir COS"></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Áreas comunes</strong></td>
-                            <td><input type="text" placeholder="0.00"></td>
-                            <td><input type="text" placeholder="%"></td>
-                            <td><input type="text" placeholder="Circulaciones, servicios, áreas verdes"></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Áreas privativas totales</strong></td>
-                            <td><input type="text" placeholder="0.00"></td>
-                            <td><input type="text" placeholder="%"></td>
-                            <td><input type="text" placeholder="Suma de superficies de unidades"></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Áreas accesorias totales</strong></td>
-                            <td><input type="text" placeholder="0.00"></td>
-                            <td><input type="text" placeholder="%"></td>
-                            <td><input type="text" placeholder="Patios, terrazas, estacionamientos privados"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- ========================================================= -->
-        <!-- SECCIÓN VII: CONSIDERACIONES FINALES Y CERTIFICACIÓN      -->
-        <!-- ========================================================= -->
-        <section>
-            <div class="section-header">
-                VII. CONSIDERACIONES FINALES Y CERTIFICACIÓN
-                <span class="badge">SHF Regla Décima</span>
-            </div>
-            <div class="section-body">
-
-                <h4>VII.1 Declaraciones del valuador</h4>
-                <div style="background:#f1f4f8; padding:16px 20px; border-radius:8px; margin-bottom:16px;">
-                    <p style="font-size:14px; line-height:1.7;">
-                        El perito valuador declara que:
-                    </p>
-                    <ul style="font-size:14px; line-height:1.8; padding-left:22px; color:#1a1a2e;">
-                        <li>La identificación física del inmueble coincide con la documentación proporcionada.</li>
-                        <li>Se realizó inspección física del inmueble en fecha: <input type="date" style="display:inline; width:auto; padding:2px 8px; border:1px solid #ced4da; border-radius:4px;"></li>
-                        <li>La información contenida en este documento corresponde con la situación real del inmueble.</li>
-                        <li>Se aplicaron los criterios de la SHF para la valuación y cálculo de indivisos.</li>
-                        <li>Se considera la Ley de Propiedad en Condominio de la CDMX para la asignación de áreas comunes.</li>
-                    </ul>
-                </div>
-
-                <h4>VII.2 Observaciones y recomendaciones</h4>
-                <div class="field-group">
-                    <textarea class="large" placeholder="Incluir notas técnicas: alineamiento y número oficial, muros medianeros, régimen de estacionamientos, restricciones o servidumbres identificadas, recomendaciones para escrituración y registro, etc."></textarea>
-                </div>
-
-                <h4>VII.3 Firma y datos del responsable técnico</h4>
-                <div class="firma-box">
-                    <div class="firma-item">
+                    <h4>Zonificación y normatividad (SEDUVI)</h4>
+                    <div class="row-3">
                         <div class="field-group">
-                            <label>Nombre del Perito Valuador / Arquitecto</label>
-                            <input type="text" placeholder="Nombre completo">
+                            <label>Uso de suelo vigente</label>
+                            <input type="text" id="uso_suelo" placeholder="Ej. Habitacional / Comercial / Mixto">
                         </div>
                         <div class="field-group">
-                            <label>Cédula profesional</label>
-                            <input type="text" placeholder="Número de cédula">
-                        </div>
-                        <div class="linea"></div>
-                        <div class="label-firma">Firma del Perito Valuador</div>
-                    </div>
-                    <div class="firma-item">
-                        <div class="field-group">
-                            <label>Registro SHF (clave)</label>
-                            <input type="text" placeholder="Clave SHF">
+                            <label>Coeficiente de Utilización del Suelo (CUS)</label>
+                            <input type="text" id="cus" placeholder="Ej. 2.5">
                         </div>
                         <div class="field-group">
-                            <label>Unidad de Valuación (clave SHF)</label>
-                            <input type="text" placeholder="Clave UV-SHF">
-                        </div>
-                        <div class="linea"></div>
-                        <div class="label-firma">Firma del Controlador SHF</div>
-                    </div>
-                    <div class="firma-item">
-                        <div class="field-group">
-                            <label>Fecha de elaboración</label>
-                            <input type="text" placeholder="Ciudad de México, a __ de ______ de 2026">
-                        </div>
-                        <div class="field-group">
-                            <label>Lugar</label>
-                            <input type="text" placeholder="Ciudad de México">
-                        </div>
-                        <div style="margin-top:18px;">
-                            <span style="display:inline-block; background:#e9ecef; padding:6px 18px; border-radius:30px; font-size:13px; font-weight:600; color:#1a1a2e;">Sello de la Unidad de Valuación</span>
+                            <label>Coeficiente de Ocupación del Suelo (COS)</label>
+                            <input type="text" id="cos" placeholder="Ej. 0.6 (60%)">
                         </div>
                     </div>
+                    <div class="field-group">
+                        <label>Porcentaje de área libre requerido</label>
+                        <input type="text" id="area_libre_req" placeholder="% mínimo exigido por normatividad">
+                    </div>
+                    <div class="field-group">
+                        <label>Servidumbres, restricciones o afectaciones</label>
+                        <textarea id="restricciones" class="medium" placeholder="Describa cualquier servidumbre de paso, restricción de uso, zona de riesgo, etc."></textarea>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- ========================================================= -->
-        <!-- PIE DE PÁGINA                                             -->
-        <!-- ========================================================= -->
+            <!-- SECCIÓN III: INFRAESTRUCTURA Y OBRAS EXTERIORES -->
+            <section>
+                <div class="section-header">
+                    III. INFRAESTRUCTURA Y OBRAS EXTERIORES (ÁREAS COMUNES)
+                    <span class="badge">SHF · Elementos comunes</span>
+                </div>
+                <div class="section-body">
+                    <h4>III.1 Instalaciones hidráulicas y sanitarias</h4>
+                    <div class="row-3">
+                        <div class="field-group">
+                            <label>Cisterna común (capacidad y ubicación)</label>
+                            <input type="text" id="cisterna" placeholder="Litros y ubicación">
+                        </div>
+                        <div class="field-group">
+                            <label>Tinacos (capacidad y cantidad)</label>
+                            <input type="text" id="tinacos" placeholder="Ej. 2 tinacos de 1,100 L c/u">
+                        </div>
+                        <div class="field-group">
+                            <label>Sistema de bombeo</label>
+                            <input type="text" id="bombeo" placeholder="Tipo, automatización, cuarto de máquinas">
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label>Red de drenaje y conexiones</label>
+                        <textarea id="drenaje" class="medium" placeholder="Describa la red de drenaje, conexión a red municipal, sistema de captación pluvial, etc."></textarea>
+                    </div>
+
+                    <h4>III.2 Obras exteriores y delimitaciones</h4>
+                    <div class="row-2">
+                        <div class="field-group">
+                            <label>Bardas perimetrales</label>
+                            <textarea id="bardas" placeholder="Material, altura, acabados, estado"></textarea>
+                        </div>
+                        <div class="field-group">
+                            <label>Accesos principales</label>
+                            <textarea id="accesos" placeholder="Portones automáticos, puertas peatonales, caseta de vigilancia"></textarea>
+                        </div>
+                    </div>
+                    <div class="row-2">
+                        <div class="field-group">
+                            <label>Pavimentos y áreas de circulación</label>
+                            <textarea id="pavimentos" placeholder="Pasillos, andadores, estacionamiento común, materiales"></textarea>
+                        </div>
+                        <div class="field-group">
+                            <label>Jardines y áreas verdes comunes</label>
+                            <textarea id="jardines_comunes" placeholder="Superficie, tipo de vegetación, sistemas de riego"></textarea>
+                        </div>
+                    </div>
+
+                    <h4>III.3 Instalaciones especiales y servicios comunes</h4>
+                    <div class="row-2">
+                        <div class="field-group">
+                            <label>Alumbrado exterior</label>
+                            <textarea id="alumbrado" placeholder="Tipo de luminarias, ubicación, estado"></textarea>
+                        </div>
+                        <div class="field-group">
+                            <label>Ductos y servicios (CFE, Telmex, gas, etc.)</label>
+                            <textarea id="ductos_servicios" placeholder="Ductería, acometidas, ubicación de nichos de medidores"></textarea>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label>Cuarto de basura y otras instalaciones</label>
+                        <textarea id="cuarto_basura" placeholder="Ubicación, sistema, capacidad, planta de emergencia, etc."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN IV: UNIDADES PRIVATIVAS -->
+            <section>
+                <div class="section-header">
+                    IV. DESCRIPCIÓN DE UNIDADES DE PROPIEDAD PRIVATIVA
+                    <span class="badge">SHF · Elementos privativos</span>
+                </div>
+                <div class="section-body">
+                    <div class="row-3">
+                        <div class="field-group">
+                            <label>No. de unidades privativas totales</label>
+                            <input type="number" id="unidades_totales" min="1" placeholder="Ej. 4">
+                        </div>
+                        <div class="field-group">
+                            <label>Clave de la unidad evaluada</label>
+                            <input type="text" id="clave_unidad" placeholder="Ej. DEP-101">
+                        </div>
+                        <div class="field-group">
+                            <label>Nombre/Tipo de unidad</label>
+                            <input type="text" id="tipo_unidad" placeholder="Ej. Depto Tipo A">
+                        </div>
+                    </div>
+                    <div class="row-3">
+                        <div class="field-group">
+                            <label>Ubicación dentro del conjunto</label>
+                            <input type="text" id="ubicacion_conjunto" placeholder="Ej. Planta Baja, frente oriente">
+                        </div>
+                        <div class="field-group">
+                            <label>Superficie construida total (m²)</label>
+                            <input type="number" step="0.01" id="sup_construida" placeholder="0.00">
+                        </div>
+                        <div class="field-group">
+                            <label>Superficie accesoria (m²)</label>
+                            <input type="number" step="0.01" id="sup_accesoria" placeholder="0.00">
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label>Uso de la unidad</label>
+                        <input type="text" id="uso_unidad" placeholder="Ej. Habitacional / Comercial">
+                    </div>
+                    <div class="field-group">
+                        <label>Desglose por niveles</label>
+                        <textarea id="desglose_niveles" placeholder="Ej. Planta Baja: 45 m², Nivel 1: 40 m²"></textarea>
+                    </div>
+                    <div class="field-group">
+                        <label>Distribución arquitectónica</label>
+                        <textarea id="distribucion_arq" placeholder="Estancia, comedor, cocina, recámaras, baños, pasillos, etc."></textarea>
+                    </div>
+                    <div class="field-group">
+                        <label>Áreas privativas accesorias</label>
+                        <textarea id="areas_accesorias_desc" placeholder="Patios de servicio, terrazas, balcones, cajones de estacionamiento exclusivos, bodegas"></textarea>
+                    </div>
+                    <div class="field-group">
+                        <label>Acabados y calidad</label>
+                        <textarea id="acabados_calidad" class="medium" placeholder="Pisos, muros, plafones, carpintería, herrería, instalaciones especiales"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN V: TABLA DE INDIVISOS -->
+            <section>
+                <div class="section-header">
+                    V. TABLA DE INDIVISOS Y COEFICIENTES DE PARTICIPACIÓN
+                    <span class="badge">Art. 13 Ley Propiedad en Condominio CDMX</span>
+                </div>
+                <div class="section-body">
+
+                    <div class="bg-soft" style="margin-bottom: 15px;">
+                        <p style="font-weight:600; margin-bottom:6px;">📐 Metodología de cálculo</p>
+                        <p style="font-size:14px; color:#1a1a2e;">
+                            <strong>Fórmula base:</strong>
+                            <code style="background:#e9ecef; padding:2px 10px; border-radius:4px;">
+                                Coeficiente (%) = (Superficie Privativa / Suma Total Privativas) × 100
+                            </code>
+                        </p>
+                    </div>
+
+                    <div class="indivisos-table-wrap">
+                        <table class="indivisos-table" id="tablaIndivisos">
+                            <thead>
+                                <tr>
+                                    <th style="width:8%;">Clave</th>
+                                    <th style="width:12%;">Ubicación / Nivel</th>
+                                    <th style="width:10%;">Uso</th>
+                                    <th style="width:11%;">Superficie Privativa (m²)</th>
+                                    <th style="width:11%;">Superficie Accesoria (m²)</th>
+                                    <th style="width:11%;">Total Privativa (m²)</th>
+                                    <th style="width:12%;">Coef. Participación (%)</th>
+                                    <th style="width:12%;">Área Común Asignada (m²)</th>
+                                    <th style="width:13%;">Observaciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodyIndivisos">
+                                <!-- Generado por JS -->
+                            </tbody>
+                            <tfoot>
+                                <tr class="totales-row">
+                                    <td colspan="2" style="text-align:right; font-weight:700;">TOTALES</td>
+                                    <td></td>
+                                    <td><input type="text" id="totalPrivativa" value="0.00" readonly style="text-align:center;"></td>
+                                    <td><input type="text" id="totalAccesoria" value="0.00" readonly style="text-align:center;"></td>
+                                    <td><input type="text" id="totalPrivativaSum" value="0.00" readonly style="text-align:center;"></td>
+                                    <td><input type="text" id="totalCoef" value="100.00" readonly style="text-align:center; color:#1b4f8b;"></td>
+                                    <td><input type="text" id="totalComun" value="0.00" readonly style="text-align:center;"></td>
+                                    <td></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <div class="btn-table-row">
+                        <button type="button" class="btn btn-primary" onclick="agregarFilaIndiviso()">+ Agregar fila</button>
+                        <button type="button" class="btn btn-danger" onclick="eliminarUltimaFila()">− Eliminar última</button>
+                        <button type="button" class="btn btn-outline-secondary" onclick="calcularTotales()">Calcular totales</button>
+                    </div>
+
+                    <h4 style="margin-top:20px;">Captura simplificada para sincronización de base de datos</h4>
+                    <div class="row-2">
+                        <div class="field-group">
+                            <label>Claves de unidades (separadas por comas)</label>
+                            <input type="text" id="indivisos_claves" placeholder="DEP-101, DEP-102, PH-201, LOC-01">
+                        </div>
+                        <div class="field-group">
+                            <label>Superficie privativa m² (separadas por comas)</label>
+                            <input type="text" id="indivisos_sup_priv" placeholder="85.00, 65.00, 120.00, 200.00">
+                        </div>
+                    </div>
+                    <div class="row-3">
+                        <div class="field-group">
+                            <label>Superficie accesoria m² (por comas)</label>
+                            <input type="text" id="indivisos_sup_acc" placeholder="5.00, 0.00, 15.00, 0.00">
+                        </div>
+                        <div class="field-group">
+                            <label>Uso de cada unidad (por comas)</label>
+                            <input type="text" id="indivisos_uso" placeholder="Habitacional, Habitacional, Comercial...">
+                        </div>
+                        <div class="field-group">
+                            <label>Observaciones de tabla (por comas)</label>
+                            <input type="text" id="indivisos_obs" placeholder="Unidad A, Unidad B, Penthouse...">
+                        </div>
+                    </div>
+
+                    <div class="field-group" style="margin-top:10px;">
+                        <label>Nota técnica sobre la ponderación (si aplica)</label>
+                        <textarea id="nota_ponderacion" placeholder="Indicar si el cálculo se realizó por superficie o con factores de ponderación..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN VI: RESUMEN DE ÁREAS -->
+            <section>
+                <div class="section-header">
+                    VI. RESUMEN DE ÁREAS Y CUADRO DE SUPERFICIES
+                    <span class="badge">SHF · Superficies</span>
+                </div>
+                <div class="section-body">
+                    <div class="row-2">
+                        <div class="field-group">
+                            <label>Área de desplante (m²)</label>
+                            <input type="number" step="0.01" id="area_desplante" placeholder="0.00">
+                        </div>
+                        <div class="field-group">
+                            <label>Área libre total (m²)</label>
+                            <input type="number" step="0.01" id="area_libre_total" placeholder="0.00">
+                        </div>
+                    </div>
+                    <div class="row-2">
+                        <div class="field-group">
+                            <label>Áreas privativas totales (m²)</label>
+                            <input type="number" step="0.01" id="areas_priv_totales" placeholder="0.00">
+                        </div>
+                        <div class="field-group">
+                            <label>Áreas accesorias totales (m²)</label>
+                            <input type="number" step="0.01" id="areas_acc_totales" placeholder="0.00">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN VII: CONSIDERACIONES FINALES Y CERTIFICACIÓN -->
+            <section>
+                <div class="section-header">
+                    VII. CONSIDERACIONES FINALES Y CERTIFICACIÓN
+                    <span class="badge">SHF Regla Décima</span>
+                </div>
+                <div class="section-body">
+                    <div class="row-2">
+                        <div class="field-group">
+                            <label>Fecha de inspección física</label>
+                            <input type="date" id="fecha_inspeccion">
+                        </div>
+                        <div class="field-group">
+                            <label>¿Coincide la identificación física con la documentación?</label>
+                            <select id="coincide_documentos">
+                                <option value="Sí">Sí</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label>Observaciones y recomendaciones adicionales</label>
+                        <textarea id="observaciones_cierre" class="large" placeholder="Incluir notas técnicas, restricciones, recomendaciones para escrituración, etc."></textarea>
+                    </div>
+
+                    <div class="field-group">
+                        <label>Enlace a fotografías (Drive/Dropbox/Cloud)</label>
+                        <input type="url" id="fotos_url" placeholder="https://drive.google.com/...">
+                    </div>
+
+                    <div class="firma-box">
+                        <div class="firma-item">
+                            <div class="field-group">
+                                <label>Nombre del Perito Valuador</label>
+                                <input type="text" id="nombre_perito_firm" placeholder="Nombre completo">
+                            </div>
+                            <div class="field-group">
+                                <label>Cédula profesional</label>
+                                <input type="text" id="cedula_profesional" placeholder="Número de cédula">
+                            </div>
+                            <div class="linea"></div>
+                            <div class="label-firma">Firma del Perito Valuador</div>
+                        </div>
+                        <div class="firma-item">
+                            <div class="field-group">
+                                <label>Persona que captura los datos</label>
+                                <input type="text" id="nombre_captura" placeholder="Nombre completo">
+                            </div>
+                            <div class="field-group">
+                                <label>Correo electrónico de contacto</label>
+                                <input type="email" id="correo_contacto" placeholder="correo@ejemplo.com">
+                            </div>
+                            <div class="linea"></div>
+                            <div class="label-firma">Responsable de Captura</div>
+                        </div>
+                        <div class="firma-item">
+                            <div class="field-group">
+                                <label>Fecha de captura</label>
+                                <input type="date" id="fecha_captura">
+                            </div>
+                            <div style="margin-top:38px;">
+                                <span style="display:inline-block; background:#e9ecef; padding:6px 18px; border-radius:30px; font-size:13px; font-weight:600; color:#1a1a2e;">Sello de la Unidad de Valuación</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <button type="submit" class="btn btn-submit">Guardar en Base de Datos de Google Sheets</button>
+        </form>
+
+        <!-- PIE DE PÁGINA -->
         <div class="footer-doc">
             <p>
                 Documento elaborado conforme a los estándares de la <strong>Sociedad Hipotecaria Federal (SHF)</strong>
                 y la <strong>Ley de Propiedad en Condominio de Inmuebles para la Ciudad de México</strong>.
-                <br>
-                Este formato es una guía técnica para la constitución de régimen en condominio y procesos de crédito hipotecario.
             </p>
             <p style="margin-top:6px; font-size:11px;">
-                Versión 1.0 · SHF · CDMX 2026
+                Versión 2.0 Integrada · SHF · CDMX 2026
             </p>
         </div>
 
     </div>
-    <!-- fin container -->
 
-    <!-- ========================================================= -->
-    <!-- JAVASCRIPT: Tabla de Indivisos dinámica                    -->
-    <!-- ========================================================= -->
+    <!-- JAVASCRIPT: Lógica de Tabla + Envío Fetch API -->
     <script>
-        // ===== Estado inicial =====
         let filaCounter = 1;
 
         function crearFilaIndiviso(clave, ubicacion, uso, privativa, accesoria, totalPriv, coef, comun, obs) {
             const tr = document.createElement('tr');
             tr.innerHTML = `
-                <td><input type="text" value="${clave || 'U-' + String(filaCounter).padStart(2, '0')}" placeholder="Clave"></td>
+                <td><input type="text" class="ind-clave" value="${clave || 'U-' + String(filaCounter).padStart(2, '0')}" placeholder="Clave"></td>
                 <td><input type="text" value="${ubicacion || ''}" placeholder="Nivel / ubicación"></td>
                 <td>
-                    <select style="width:100%; padding:4px 6px; border:1px solid transparent; background:transparent; border-radius:4px; font-size:13px;">
+                    <select class="ind-uso" style="width:100%; padding:4px 6px; border:1px solid transparent; background:transparent; border-radius:4px; font-size:13px;">
                         <option value="Habitacional" ${uso === 'Habitacional' ? 'selected' : ''}>Habitacional</option>
                         <option value="Comercial" ${uso === 'Comercial' ? 'selected' : ''}>Comercial</option>
                         <option value="Estacionamiento" ${uso === 'Estacionamiento' ? 'selected' : ''}>Estacionamiento</option>
@@ -1235,12 +1036,12 @@
                         <option value="Otro" ${uso === 'Otro' ? 'selected' : ''}>Otro</option>
                     </select>
                 </td>
-                <td><input type="number" step="0.01" class="campo-privativa" value="${privativa || '0.00'}" placeholder="0.00" onchange="calcularTotales()" oninput="calcularTotales()"></td>
-                <td><input type="number" step="0.01" class="campo-accesoria" value="${accesoria || '0.00'}" placeholder="0.00" onchange="calcularTotales()" oninput="calcularTotales()"></td>
+                <td><input type="number" step="0.01" class="campo-privativa" value="${privativa || '0.00'}" placeholder="0.00" oninput="calcularTotales()"></td>
+                <td><input type="number" step="0.01" class="campo-accesoria" value="${accesoria || '0.00'}" placeholder="0.00" oninput="calcularTotales()"></td>
                 <td><input type="number" step="0.01" class="campo-total-priv" value="${totalPriv || '0.00'}" placeholder="0.00" readonly style="background:#f1f4f8; text-align:center;"></td>
                 <td><input type="number" step="0.01" class="campo-coef" value="${coef || '0.00'}" placeholder="0.00" readonly style="background:#f1f4f8; text-align:center;"></td>
                 <td><input type="number" step="0.01" class="campo-comun" value="${comun || '0.00'}" placeholder="0.00" readonly style="background:#f1f4f8; text-align:center;"></td>
-                <td><input type="text" value="${obs || ''}" placeholder="Observaciones"></td>
+                <td><input type="text" class="ind-obs" value="${obs || ''}" placeholder="Observaciones"></td>
             `;
             filaCounter++;
             return tr;
@@ -1270,16 +1071,13 @@
             let sumPrivativa = 0;
             let sumAccesoria = 0;
             let sumTotalPriv = 0;
-            let sumComun = 0;
 
             filas.forEach(tr => {
                 const privInput = tr.querySelector('.campo-privativa');
                 const accInput = tr.querySelector('.campo-accesoria');
                 const totalPrivInput = tr.querySelector('.campo-total-priv');
-                const coefInput = tr.querySelector('.campo-coef');
-                const comunInput = tr.querySelector('.campo-comun');
 
-                if (privInput && accInput && totalPrivInput && coefInput && comunInput) {
+                if (privInput && accInput && totalPrivInput) {
                     const priv = parseFloat(privInput.value) || 0;
                     const acc = parseFloat(accInput.value) || 0;
                     const total = priv + acc;
@@ -1291,51 +1089,63 @@
                 }
             });
 
-            // Recalcular coeficientes y área común (asumiendo que el total de áreas comunes se asigna proporcionalmente)
-            // Para este ejemplo, mostramos solo los totales. En una implementación completa se calcularía cada coeficiente.
             filas.forEach(tr => {
                 const totalPrivInput = tr.querySelector('.campo-total-priv');
                 const coefInput = tr.querySelector('.campo-coef');
                 const comunInput = tr.querySelector('.campo-comun');
+
                 if (totalPrivInput && coefInput && comunInput && sumTotalPriv > 0) {
                     const total = parseFloat(totalPrivInput.value) || 0;
                     const coef = (total / sumTotalPriv) * 100;
                     coefInput.value = coef.toFixed(2);
-                    // Área común asignada (ejemplo: se asigna un total de 100 m² de áreas comunes)
-                    // En un caso real, el total de áreas comunes se tomaría de la Sección VI
-                    const totalComunes = 100; // Valor de ejemplo
+                    const totalComunes = 100; 
                     const comun = (total / sumTotalPriv) * totalComunes;
                     comunInput.value = comun.toFixed(2);
                 }
             });
 
-            // Actualizar totales en el footer
             document.getElementById('totalPrivativa').value = sumPrivativa.toFixed(2);
             document.getElementById('totalAccesoria').value = sumAccesoria.toFixed(2);
             document.getElementById('totalPrivativaSum').value = sumTotalPriv.toFixed(2);
 
-            // Sumar coeficientes
             let sumCoef = 0;
             filas.forEach(tr => {
                 const coefInput = tr.querySelector('.campo-coef');
-                if (coefInput) {
-                    sumCoef += parseFloat(coefInput.value) || 0;
-                }
+                if (coefInput) sumCoef += parseFloat(coefInput.value) || 0;
             });
             document.getElementById('totalCoef').value = sumCoef.toFixed(2);
 
-            // Sumar áreas comunes asignadas
             let sumComunTotal = 0;
             filas.forEach(tr => {
                 const comunInput = tr.querySelector('.campo-comun');
-                if (comunInput) {
-                    sumComunTotal += parseFloat(comunInput.value) || 0;
-                }
+                if (comunInput) sumComunTotal += parseFloat(comunInput.value) || 0;
             });
             document.getElementById('totalComun').value = sumComunTotal.toFixed(2);
+
+            // Sincronizar listas separadas por comas para SheetDB
+            sincronizarCamposTabla();
         }
 
-        // ===== Cargar filas iniciales de ejemplo =====
+        function sincronizarCamposTabla() {
+            const filas = document.querySelectorAll('#tbodyIndivisos tr');
+            let claves = [], privs = [], accs = [], usos = [], obss = [];
+
+            filas.forEach(tr => {
+                claves.push(tr.querySelector('.ind-clave')?.value || '');
+                privs.push(tr.querySelector('.campo-privativa')?.value || '0');
+                accs.push(tr.querySelector('.campo-accesoria')?.value || '0');
+                usos.push(tr.querySelector('.ind-uso')?.value || '');
+                obss.push(tr.querySelector('.ind-obs')?.value || '');
+            });
+
+            document.getElementById('indivisos_claves').value = claves.join(', ');
+            document.getElementById('indivisos_sup_priv').value = privs.join(', ');
+            document.getElementById('indivisos_sup_acc').value = accs.join(', ');
+            document.getElementById('indivisos_uso').value = usos.join(', ');
+            document.getElementById('indivisos_obs').value = obss.join(', ');
+        }
+
+        // Cargar filas iniciales
         document.addEventListener('DOMContentLoaded', function() {
             agregarFilaIndiviso('DEP-101', 'Nivel 1', 'Habitacional', '85.00', '5.00', '90.00', '0.00', '0.00', 'Unidad tipo A');
             agregarFilaIndiviso('DEP-102', 'Nivel 1', 'Habitacional', '65.00', '0.00', '65.00', '0.00', '0.00', 'Unidad tipo B');
@@ -1343,40 +1153,112 @@
             agregarFilaIndiviso('LOC-01', 'Planta Baja', 'Comercial', '200.00', '0.00', '200.00', '0.00', '0.00', 'Local comercial');
             calcularTotales();
         });
+
+        // Envio de Formulario
+        document.getElementById('formAvaluos').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const URL_API = "TU_URL_DE_SHEETDB_AQUI";
+
+            const registro = {
+                "data": [{
+                    "Marca temporal": new Date().toLocaleString(),
+                    "Dirección de correo electrónico": document.getElementById('correo_institucional').value,
+                    "Clave del avalúo (formato SHF)": document.getElementById('clave_avaluo').value,
+                    "Fecha de certificación": document.getElementById('fecha_certificacion').value,
+                    "Clave Única de Vivienda (CUV)": document.getElementById('cuv').value,
+                    "Clave Unidad de Valuación SHF": document.getElementById('clave_unidad_shf').value,
+                    "Nombre y clave del Controlador SHF": document.getElementById('controlador_shf').value,
+                    "Nombre y clave del Perito Valuador SHF": document.getElementById('perito_shf').value,
+                    "Solicitante del avalúo": document.getElementById('solicitante').value,
+                    "Propósito del avalúo": document.getElementById('proposito').value,
+                    "Número de registro INFONAVIT (si aplica)": document.getElementById('registro_infonavit').value,
+                    "Nombre del proyecto o condominio": document.getElementById('nombre_proyecto').value,
+                    "Ubicación completa": document.getElementById('ubicacion').value,
+                    "Cuenta predial": document.getElementById('cuenta_predial').value,
+                    "Régimen de propiedad actual": document.getElementById('regimen_propiedad').value,
+                    "Tipo de inmueble (SHF)": document.getElementById('tipo_inmueble').value,
+                    "Número de escritura": document.getElementById('num_escritura').value,
+                    "Fecha de la escritura": document.getElementById('fecha_escritura').value,
+                    "Notario Público ( Nombre del Notario, número)": document.getElementById('notario').value,
+                    "Folio Real / Registro Público": document.getElementById('folio_real').value,
+                    "Antecedentes jurídicos adicionales ( Gravámenes, servidumbres, cesiones, etc": document.getElementById('antecedentes').value,
+                    "Superficie total del terreno (m²) (Número mayor a 0)": document.getElementById('superficie_terreno').value,
+                    "Forma y configuración": document.getElementById('forma_terreno').value,
+                    "Topografía": document.getElementById('topografia').value,
+                    "Número de frentes a vialidad": document.getElementById('frentes_vialidad').value,
+                    "Colindancia Norte ( Medida en metros y nombre del vecino o predio)": document.getElementById('colindancia_norte').value,
+                    "Colindancia Sur": document.getElementById('colindancia_sur').value,
+                    "Colindancia Oriente": document.getElementById('colindancia_oriente').value,
+                    "Colindancia Poniente": document.getElementById('colindancia_poniente').value,
+                    "Uso de suelo vigente (SEDUVI)": document.getElementById('uso_suelo').value,
+                    "Coeficiente de Utilización del Suelo (CUS)": document.getElementById('cus').value,
+                    "Coeficiente de Ocupación del Suelo (COS)": document.getElementById('cos').value,
+                    "Porcentaje de área libre requerido": document.getElementById('area_libre_req').value,
+                    "Servidumbres, restricciones o afectaciones": document.getElementById('restricciones').value,
+                    "Cisterna común (capacidad en litros y ubicación)": document.getElementById('cisterna').value,
+                    "Tinacos (capacidad y cantidad)": document.getElementById('tinacos').value,
+                    "Sistema de bombeo (tipo y automatización)": document.getElementById('bombeo').value,
+                    "Red de drenaje y conexiones": document.getElementById('drenaje').value,
+                    "Bardas perimetrales (material, altura, acabados)": document.getElementById('bardas').value,
+                    "Accesos principales (portones, puertas, caseta)": document.getElementById('accesos').value,
+                    "Pavimentos y áreas de circulación (materiales)": document.getElementById('pavimentos').value,
+                    "Jardines y áreas verdes comunes": document.getElementById('jardines_comunes').value,
+                    "Alumbrado exterior": document.getElementById('alumbrado').value,
+                    "Ductos y servicios (CFE, Telmex, gas)": document.getElementById('ductos_servicios').value,
+                    "Cuarto de basura": document.getElementById('cuarto_basura').value,
+                    "Número de unidades privativas en el inmueble ( Número mayor a 0)": document.getElementById('unidades_totales').value,
+                    "Clave de la unidad ( Ej. DEP-101, PH-201, LOC-01)": document.getElementById('clave_unidad').value,
+                    "Nombre/Tipo de la unidad  (Ej. Departamento tipo A, Local comercial, Penthouse)": document.getElementById('tipo_unidad').value,
+                    "Ubicación dentro del conjunto ( Nivel, orientación, frente)": document.getElementById('ubicacion_conjunto').value,
+                    "Superficie construida total (m²) (Número mayor a 0)": document.getElementById('sup_construida').value,
+                    "Desglose por niveles ( Estancia, comedor, cocina, recámaras, baños, pasillos, etc.)": document.getElementById('desglose_niveles').value,
+                    "Distribución arquitectónica ( Estancia, comedor, cocina, recámaras, baños, pasillos, etc.)": document.getElementById('distribucion_arq').value,
+                    "Áreas privativas accesorias ( Patios de servicio, terrazas, balcones, cajones de estacionamiento, bodegas)": document.getElementById('areas_accesorias_desc').value,
+                    "Acabados y calidad ( Pisos, muros, plafones, carpintería, herrería, installations)": document.getElementById('acabados_calidad').value,
+                    "Superficie accesoria (m²) ( Suma de patios, terrazas, estacionamientos, etc.)": document.getElementById('sup_accesoria').value,
+                    "Uso de la unidad": document.getElementById('uso_unidad').value,
+                    "Tabla de indivisos - Clave de unidad ( Lista separada por comas: DEP-101, DEP-102, PH-201, ...)": document.getElementById('indivisos_claves').value,
+                    "Tabla de indivisos - Superficie privativa (m²) ( Lista separada por comas, en el mismo orden: 85.00, 65.00, 120.00, ...)": document.getElementById('indivisos_sup_priv').value,
+                    "Tabla de indivisos - Superficie accesoria (m²) (Lista separada por comas, en el mismo orden: 5.00, 0.00, 15.00, ...)": document.getElementById('indivisos_sup_acc').value,
+                    "Tabla de indivisos - Uso de cada unidad (Lista separada por comas: Habitacional, Habitacional, Comercial, ...)": document.getElementById('indivisos_uso').value,
+                    "Tabla de indivisos - Observaciones ( Lista separada por comas: Unidad tipo A, Unidad tipo B, Local comercial, ...)": document.getElementById('indivisos_obs').value,
+                    "Nota técnica sobre ponderación ( Indicar si el cálculo fue por superficie o con factores de ponderación)": document.getElementById('nota_ponderacion').value,
+                    "Área de desplante (m²)": document.getElementById('area_desplante').value,
+                    "Área libre total (m²)": document.getElementById('area_libre_total').value,
+                    "Áreas privativas totales (m²)": document.getElementById('areas_priv_totales').value,
+                    "Áreas accesorias totales (m²)": document.getElementById('areas_acc_totales').value,
+                    "Fecha de inspección física": document.getElementById('fecha_inspeccion').value,
+                    "¿Coincide la identificación física con la documentación?": document.getElementById('coincide_documentos').value,
+                    "Nombre del Perito Valuador": document.getElementById('nombre_perito_firm').value,
+                    "Cédula profesional": document.getElementById('cedula_profesional').value,
+                    "Observaciones y recomendaciones adicionales": document.getElementById('observaciones_cierre').value,
+                    "Adjuntar fotografías (Fachadas, entorno, elementos interiores representativos)": document.getElementById('fotos_url').value,
+                    "Nombre de la persona que captura los datos": document.getElementById('nombre_captura').value,
+                    "Correo electrónico de contacto": document.getElementById('correo_contacto').value,
+                    "Fecha de captura": document.getElementById('fecha_captura').value
+                }]
+            };
+
+            if (URL_API === "https://sheetdb.io/api/v1/dmn22sa7ad89n") {
+                alert("Por favor, configura tu URL de SheetDB en la variable URL_API del código.");
+                return;
+            }
+
+            fetch(URL_API, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(registro)
+            })
+            .then(res => res.json())
+            .then(data => {
+                alert("¡Avalúo cargado y guardado con éxito!");
+            })
+            .catch(err => {
+                alert("Error al intentar guardar el registro.");
+                console.error(err);
+            });
+        });
     </script>
-<script>
-  const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbzgLmF-d_1guzJffVTsLF1gQ4qJpnR1p88ZPeSdJ2P2KVm4TM66wp4OhPylefY7FavK/exec";
-
-  // 1. Cargar datos de la hoja cuando se abre la página
-  window.addEventListener('DOMContentLoaded', () => {
-    fetch(URL_APPS_SCRIPT)
-      .then(response => response.json())
-      .then(datos => {
-        console.log("Datos cargados desde la hoja de cálculo:", datos);
-        // Aquí puedes mapear 'datos' a la Tabla de Indivisos o campos del HTML
-      })
-      .catch(err => console.error("Error al cargar datos:", err));
-  });
-
-  // 2. Función para enviar un nuevo registro desde el HTML
-  function enviarNuevoRegistro() {
-    // Organiza los valores en el mismo orden de columnas que tu Google Sheets
-    const nuevoRegistro = [
-      new Date().toLocaleString(), // Fecha/Hora
-      document.getElementById('claveAvaluo')?.value || '',
-      document.getElementById('cuv')?.value || '',
-      document.getElementById('proyecto')?.value || ''
-    ];
-
-    fetch(URL_APPS_SCRIPT, {
-      method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ registro: nuevoRegistro })
-    })
-    .then(() => alert("Registro agregado correctamente a la hoja de cálculo."))
-    .catch(err => alert("Error al guardar: " + err));
-  }
-</script>
 </body>
 </html>
